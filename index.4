@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="PT. International Cassava Center">
+    <meta property="og:description" content="Inovasi Produk Turunan & Substitusi Singkong dari Hulu ke Hilir. Bergabunglah menjadi mitra kami!">
+    <meta property="og:image" content="Img/Logo/Logo.png">
+    <meta property="og:url" content="https://website-anda.com">
+    <meta property="og:type" content="website">
+
+    <title>PT. International Cassava Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script type="text/javascript">
+        window.$crisp=[];
+        // Ganti MASUKAN_WEBSITE_ID_CRISP_ANDA dengan ID dari dashboard Crisp Anda
+        window.CRISP_WEBSITE_ID="MASUKAN_WEBSITE_ID_CRISP_ANDA"; 
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        primary: '#114232',
+                        secondary: '#87A922',
+                        accent: '#FCDC2A',
+                        textlight: '#e5e7eb'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #imageModal {
+            display: none; position: fixed; z-index: 9999; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+        }
+        #imageModal img { margin: auto; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; }
+        #imageModal span { position: absolute; top: 20px; right: 40px; color: white; font-size: 30px; cursor: pointer; }
+        .cart-btn { position: absolute; bottom: 10px; right: 10px; background: #22c55e; padding: 8px; border-radius: 50%; cursor: pointer; z-index: 20; }
+        .cart-btn i { color: white; }
+        .bg-slider { position: absolute; inset: 0; z-index: 0; }
+        .bg-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; }
+        .bg-slide.active { opacity: 1; }
+        body { background-color: #0a0a0a; color: #e5e7eb; }
+        .bg-hero { background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(17, 66, 50, 0.85)), url('https://images.unsplash.com/photo-1595856467023-ce730ad3d7e5?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; }
+        .bg-pattern { background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.95), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1626244747761-12ec828d150b?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #114232; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #87A922; }
+        .glass-card { background: rgba(17, 66, 50, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(135, 169, 34, 0.2); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .crisp-client .crisp-1r4wkw8 { display: none !important; }
+    </style>
+</head>
+<body class="font-sans antialiased text-textlight selection:bg-secondary selection:text-dark">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-darker/90 backdrop-blur-md border-b border-primary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+               <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+    <img src="Img/Logo/Logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover shadow-[0_0_15px_rgba(135,169,34,0.3)]">
+    <span class="font-serif font-bold text-xl tracking-wider text-white"><span class="text-secondary"></span> PT.ICC</span>
+</div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#beranda" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">BERANDA</a>
+                        <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">ABOUT</a>
+                        <a href="#project" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">PROJECT</a>
+                        <div class="relative dropdown inline-block">
+                            <button class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1">
+                                MITRA <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="dropdown-menu hidden absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-dark ring-1 ring-primary ring-opacity-50 focus:outline-none overflow-hidden">
+                                <div class="py-1">
+                                    <a href="#laporan-tahunan" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Laporan Tahunan</a>
+                                    <a href="#laporan-keuangan" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Laporan Keuangan</a>
+                                    <a href="#informasi-rups" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Informasi RUPS</a>
+                                    <a href="#kemitraan" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Informasi Kemitraan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-primary/30">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary">BERANDA</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary">ABOUT</a>
+                <a href="#project" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary">PROJECT</a>
+                <div class="px-3 py-2 text-base font-medium text-secondary">MITRA :</div>
+                <a href="#laporan-tahunan" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium hover:bg-primary/50 text-gray-400">Laporan Tahunan</a>
+                <a href="#laporan-keuangan" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium hover:bg-primary/50 text-gray-400">Laporan Keuangan</a>
+                <a href="#informasi-rups" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium hover:bg-primary/50 text-gray-400">Informasi RUPS</a>
+                <a href="#kemitraan" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium hover:bg-primary/50 text-gray-400">Informasi Kemitraan</a>
+            </div>
+        </div>
+    </nav>
+
+<header id="beranda" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+    <div class="bg-slider">
+        <div class="bg-slide active" style="background-image: url('Img/Background/Bg1.png');"></div>
+        <div class="bg-slide" style="background-image: url('Img/Background/Bg2.png');"></div>
+        <div class="bg-slide" style="background-image: url('Img/Background/Bg3.png');"></div>
+		<div class="bg-slide" style="background-image: url('Img/Background/Bg4.png');"></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent z-10"></div>
+    <div class="relative z-20 px-4 max-w-5xl mx-auto mt-16" data-aos="zoom-in" data-aos-duration="1200">
+    <p class="text-secondary tracking-[0.3em] uppercase text-sm md:text-base font-semibold mb-4" data-aos="fade-down" data-aos-delay="300">
+        Bogor, <span id="waktu"></span>
+    </p>
+        <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 text-white leading-tight" data-aos="fade-up" data-aos-delay="500">
+            Audiensi With <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-green-400">
+                Cassava Center
+            </span>
+        </h1>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="900">
+            <a href="#about" class="px-8 py-4 bg-primary hover:bg-secondary text-white rounded-sm transition-all duration-300 font-medium tracking-wide">TENTANG KAMI</a>
+            <a href="#project" class="px-8 py-4 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-dark rounded-sm transition-all duration-300 font-medium tracking-wide">LIHAT PRODUK</a>
+        </div>
+    </div>
+</header>
+
+    <section class="py-16 bg-dark border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-serif text-white"><span class="text-secondary">Positive Value</span> of Our Product</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="glass-card p-6 rounded-lg text-center hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-secondary text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]"><i class="fas fa-link"></i></div>
+                    <h3 class="font-bold text-white mb-2">Supply Chain</h3><p class="text-xs text-gray-400">Ketersediaan bahan baku dikelola dari hulu ke hilir.</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-secondary text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]"><i class="fas fa-tags"></i></div>
+                    <h3 class="font-bold text-white mb-2">Good Price</h3><p class="text-xs text-gray-400">Harga kompetitif dengan kualitas produk sejenis di pasaran.</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-secondary text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]"><i class="fas fa-handshake"></i></div>
+                    <h3 class="font-bold text-white mb-2">Loyal Market</h3><p class="text-xs text-gray-400">Memiliki jaringan pembeli yang loyal dan stabil di berbagai pulau.</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-secondary text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="font-bold text-white mb-2">Production Increase</h3><p class="text-xs text-gray-400">Peningkatan jumlah produksi yang sangat signifikan.</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-secondary text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="font-bold text-white mb-2">Innovation</h3><p class="text-xs text-gray-400">Pengembangan produk substitusi yang inovatif dan unik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-secondary tracking-widest text-sm font-bold uppercase mb-2">Tentang Kami</h2>
+                    <h3 class="text-4xl font-serif text-white font-bold mb-6">Manajemen & Objektif</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">PT. International Cassava Center berfokus pada dua tujuan utama: memperbesar pasar produk existing dan membuka pasar baru melalui pengembangan inovasi turunan singkong.</p>
+                    <div class="space-y-6 mt-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded bg-primary flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(135,169,34,0.3)]"><i class="fas fa-bullseye text-secondary text-xl"></i></div>
+                            <div><h4 class="text-white font-bold text-lg">Target Pasar Spesifik</h4><p class="text-sm text-gray-400 mt-1">50% Premium Grade (> Rp 15.000) & 50% Medium Grade (> Rp 12.000) mendistribusi ke seluruh Indonesia.</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded bg-primary flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(135,169,34,0.3)]"><i class="fas fa-cogs text-secondary text-xl"></i></div>
+                            <div><h4 class="text-white font-bold text-lg">Strategi Manajemen</h4><p class="text-sm text-gray-400 mt-1">Pengembangan CAPEX (Capital Expenditure), pemenuhan MPP, menetapkan Production Establish & Sales Process terukur.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="absolute inset-0 rounded-3xl overflow-hidden opacity-30">
+                        <img src="https://images.unsplash.com/photo-1595856467023-ce730ad3d7e5?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 relative z-10 p-2">
+                        <div class="glass-card p-5 rounded-br-3xl border-l-4 border-l-secondary transform hover:scale-105 transition-transform">
+                            <div class="text-secondary font-bold mb-2 flex justify-between"><span>S</span> <i class="fas fa-arrow-up"></i></div><h5 class="text-white font-semibold mb-2 text-sm">Strength</h5><ul class="text-xs text-gray-400 space-y-1 list-disc pl-4"><li>Standarisasi produksi UKM</li><li>Market loyal & stabil</li><li>Formulasi sesuai market</li></ul>
+                        </div>
+                        <div class="glass-card p-5 rounded-bl-3xl border-r-4 border-r-red-800 transform hover:scale-105 transition-transform">
+                            <div class="text-red-500 font-bold mb-2 flex justify-between"><span>W</span> <i class="fas fa-arrow-down"></i></div><h5 class="text-white font-semibold mb-2 text-sm">Weakness</h5><ul class="text-xs text-gray-400 space-y-1 list-disc pl-4"><li>Fluktuasi supply bahan baku (tapioka kasar) dari sisi kualitas dan kuantitas.</li></ul>
+                        </div>
+                        <div class="glass-card p-5 rounded-tr-3xl border-l-4 border-l-blue-500 mt-4 transform hover:scale-105 transition-transform">
+                            <div class="text-blue-500 font-bold mb-2 flex justify-between"><span>O</span> <i class="fas fa-eye"></i></div><h5 class="text-white font-semibold mb-2 text-sm">Opportunity</h5><ul class="text-xs text-gray-400 space-y-1 list-disc pl-4"><li>Modernisasi UKM binaan</li><li>Sentralisasi basis Zero Waste</li></ul>
+                        </div>
+                        <div class="glass-card p-5 rounded-tl-3xl border-r-4 border-r-yellow-600 mt-4 transform hover:scale-105 transition-transform">
+                            <div class="text-yellow-500 font-bold mb-2 flex justify-between"><span>T</span> <i class="fas fa-exclamation-triangle"></i></div><h5 class="text-white font-semibold mb-2 text-sm">Threat</h5><ul class="text-xs text-gray-400 space-y-1 list-disc pl-4"><li>Degradasi lahan pertanian</li><li>Fluktuasi harga komoditi</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-darker border-y border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-up">
+                    <h2 class="text-secondary tracking-widest text-sm font-bold uppercase mb-2">Market Insight</h2>
+                    <h3 class="text-3xl font-serif text-white font-bold mb-6">Analisis & Distribusi Pasar 2024</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Data distribusi penjualan menunjukkan dominasi kuat di wilayah Jawa dan Sumatera. Hal ini membuktikan jaringan pasar yang loyal serta permintaan yang konsisten terhadap kualitas produk kami.</p>
+                    <div class="flex items-center gap-4 text-sm text-gray-300 bg-dark p-4 rounded-lg border border-primary/50">
+                        <i class="fas fa-chart-pie text-3xl text-secondary"></i><p>Visualisasi 3D di samping menggambarkan pangsa pasar berdasarkan wilayah distribusi utama PT ICC.</p>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="glass-card p-4 rounded-2xl relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-2xl pointer-events-none"></div>
+                    <div id="piechart_3d" class="w-full h-[350px] md:h-[400px]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-secondary tracking-widest text-sm font-bold uppercase mb-2">Our Product & Roadmap</h2>
+                <h3 class="text-4xl font-serif text-white font-bold">Inovasi Produk Kami</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <div class="bg-darker border border-primary/50 rounded-xl overflow-hidden hover:border-secondary transition-colors group relative">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="openModal('Img/Produk/Nyonya tani.png')">
+                        <img src="Img/Produk/Nyonya tani.png" class="absolute inset-0 w-full h-full object-contain bg-white p-2 hover:scale-110 transition duration-500" alt="Nyonya Tani">
+                    </div>
+                    <a onclick="openOrderModal('Cap Nyonya Tani')" class="absolute top-2 right-2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition cursor-pointer">🛒</a>
+                    <div class="p-6 relative z-10 bg-darker">
+                        <div class="text-xs text-secondary font-bold mb-1">Kemasan 500gr-1Kg-25kg-50kg</div><h4 class="text-xl font-bold text-white mb-2">Cap Nyonya Tani</h4><p class="text-sm text-gray-400">Tepung tapioka berkualitas standar produksi nasional, cocok untuk kebutuhan industri rumah tangga dan retail.</p>
+                    </div>
+                </div>
+                <div class="bg-darker border border-primary/50 rounded-xl overflow-hidden hover:border-secondary transition-colors group relative">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="openModal('Img/Produk/Boss tani.png')">
+                        <img src="Img/Produk/Boss tani.png" class="absolute inset-0 w-full h-full object-contain bg-white p-2 hover:scale-110 transition duration-500" alt="Boss Tani">
+                    </div>
+                    <a onclick="openOrderModal('Cap Boss Tani')" class="absolute top-2 right-2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition cursor-pointer">🛒</a>
+                    <div class="p-6 relative z-10 bg-darker">
+                        <div class="text-xs text-secondary font-bold mb-1">Kemasan 500gr-1Kg-25kg-50kg</div><h4 class="text-xl font-bold text-white mb-2">Cap Boss Tani</h4><p class="text-sm text-gray-400">Tepung tapioka berkualitas standar produksi nasional, cocok untuk kebutuhan industri rumah tangga dan retail.</p>
+                    </div>
+                </div>
+                <div class="bg-darker border border-primary/50 rounded-xl overflow-hidden hover:border-secondary transition-colors group relative">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="openModal('Img/Produk/Mocaf merah putih.jpeg')">
+                        <img src="Img/Produk/Mocaf merah putih.jpeg" class="absolute inset-0 w-full h-full object-contain bg-white p-2 hover:scale-110 transition duration-500" alt="Mocaf Merah Putih">
+                    </div>
+                    <a onclick="openOrderModal('Mocaf Merah Putih')" class="absolute top-2 right-2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition cursor-pointer">🛒</a>
+                    <div class="p-6 relative z-10 bg-darker">
+                        <div class="text-xs text-secondary font-bold mb-1">Kemasan 500gr-1Kg-25kg-50kg</div><h4 class="text-xl font-bold text-white mb-2">Mocaf Merah Putih</h4><p class="text-sm text-gray-400">Tepung tapioka berkualitas standar produksi nasional, cocok untuk kebutuhan industri rumah tangga dan retail.</p>
+                    </div>
+                </div>
+                <div class="bg-darker border border-primary/50 rounded-xl overflow-hidden hover:border-secondary transition-colors group relative">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="openModal('Img/Produk/Gn putri tani.jpg')">
+                        <img src="Img/Produk/Gn putri tani.jpg" class="absolute inset-0 w-full h-full object-contain bg-white p-2 hover:scale-110 transition duration-500" alt="Gn putri tani">
+                    </div>
+                    <a onclick="openOrderModal('Gn Putri Tani')" class="absolute top-2 right-2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition cursor-pointer">🛒</a>
+                    <div class="p-6 relative z-10 bg-darker">
+                        <div class="text-xs text-secondary font-bold mb-1">Kemasan 500gr-1Kg-25kg-50kg</div><h4 class="text-xl font-bold text-white mb-2">Gn putri tani</h4><p class="text-sm text-gray-400">Tepung tapioka berkualitas standar produksi nasional, cocok untuk kebutuhan industri rumah tangga dan retail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+                <span onclick="closeModal()" class="absolute top-5 right-5 text-white text-3xl cursor-pointer">&times;</span>
+                <img id="modalImg" class="max-w-3xl w-full rounded-lg shadow-lg">
+            </div>
+
+            <div id="laporan-tahunan" class="pt-10 scroll-mt-20">
+                <div class="glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden" data-aos="fade-up">
+                    <h3 class="text-3xl font-serif text-white font-bold mb-10 border-b border-primary pb-4">Laporan & Roadmap Eksekusi (2025-2030)</h3>
+                    <div class="relative border-l border-primary/50 ml-3 space-y-12">
+                        <div class="relative pl-8" data-aos="fade-left" data-aos-delay="100">
+                            <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[8.5px] top-1 shadow-[0_0_10px_#87A922]"></div>
+                            <h4 class="text-xl font-bold text-white">2025 <span class="text-sm font-normal text-gray-400 ml-2">Fondasi Strategis</span></h4><p class="text-gray-400 mt-2 text-sm md:text-base">Optimalisasi tim inti dan memulai langkah strategis pemasaran. Menjalankan program kampanye produk non-organik. Setup manufacturing (Modern UKM) yang menopang pasar medium-low.</p>
+                        </div>
+                        <div class="relative pl-8" data-aos="fade-left" data-aos-delay="200">
+                            <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[8.5px] top-1 shadow-[0_0_10px_#87A922]"></div>
+                            <h4 class="text-xl font-bold text-white">2026 <span class="text-sm font-normal text-gray-400 ml-2">Stabilitas & Ekstensi</span></h4><p class="text-gray-400 mt-2 text-sm md:text-base">Menjaga rasio margin di angka 6-7% pada produk utama dan produk baru. Memperluas area distribusi wilayah Indonesia.</p>
+                        </div>
+                        <div class="relative pl-8" data-aos="fade-left" data-aos-delay="300">
+                            <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[8.5px] top-1 shadow-[0_0_10px_#87A922]"></div>
+                            <h4 class="text-xl font-bold text-white">2027 <span class="text-sm font-normal text-gray-400 ml-2">CAPEX & Modernisasi</span></h4><p class="text-gray-400 mt-2 text-sm md:text-base">Alokasi anggaran pengembangan belanja modal (CAPEX) untuk meningkatkan mutu standarisasi produksi. Injeksi modal UKM mitra.</p>
+                        </div>
+                        <div class="relative pl-8" data-aos="fade-left" data-aos-delay="400">
+                            <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[8.5px] top-1 shadow-[0_0_10px_#87A922]"></div>
+                            <h4 class="text-xl font-bold text-white">2028 <span class="text-sm font-normal text-gray-400 ml-2">Program Zero Waste</span></h4><p class="text-gray-400 mt-2 text-sm md:text-base">Penerapan program Sentralisasi UKM terintegrasi dengan pengelolaan limbah terpadu. Target kenaikan net margin > 7%.</p>
+                        </div>
+                        <div class="relative pl-8" data-aos="fade-left" data-aos-delay="500">
+                            <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[8.5px] top-1 shadow-[0_0_10px_#87A922]"></div>
+                            <h4 class="text-xl font-bold text-white">2029 - 2030 <span class="text-sm font-normal text-gray-400 ml-2">Kawasan Industri</span></h4><p class="text-gray-400 mt-2 text-sm md:text-base">Mencapai target pertumbuhan stabil. Mengeksekusi strategi pembangunan kawasan industri singkong (Bogor Cassava Center) terpadu. Pengamanan supply chain 100%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mitra" class="py-24 bg-pattern relative">
+        <div class="absolute inset-0 bg-dark/80"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-secondary tracking-widest text-sm font-bold uppercase mb-2">Informasi Mitra & Investor</h2>
+                <h3 class="text-4xl font-serif text-white font-bold">Transparansi Keuangan</h3>
+            </div>
+            <div id="laporan-keuangan" class="glass-card rounded-2xl overflow-hidden mb-16 scroll-mt-24 border border-primary/50" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="bg-primary/30 p-6 border-b border-primary/50 flex justify-between items-center flex-wrap gap-4">
+                    <h4 class="text-xl font-bold text-white"><i class="fas fa-file-invoice-dollar text-secondary mr-2"></i> Laporan Proyeksi Laba Rugi</h4>
+                    <span class="text-xs bg-dark px-3 py-1 rounded text-secondary border border-secondary/30">BEP Target: 57 Months (1.8 Years)</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-300">
+                        <thead class="bg-darker/80 text-secondary uppercase text-xs">
+                            <tr>
+                                <th class="px-6 py-4 font-semibold">Deskripsi (Ribuan / x 1.000)</th><th class="px-6 py-4 font-semibold">2026</th><th class="px-6 py-4 font-semibold">2027</th><th class="px-6 py-4 font-semibold">2028</th><th class="px-6 py-4 font-semibold">2029</th><th class="px-6 py-4 font-semibold">2030</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-primary/30 bg-dark/40">
+                            <tr class="hover:bg-primary/20 transition-colors">
+                                <td class="px-6 py-4 font-medium text-white">Pendapatan (Income)</td><td class="px-6 py-4">Rp 57.362.547</td><td class="px-6 py-4">Rp 61.373.713</td><td class="px-6 py-4">Rp 65.845.760</td><td class="px-6 py-4">Rp 71.125.869</td><td class="px-6 py-4">Rp 76.460.541</td>
+                            </tr>
+                            <tr class="hover:bg-primary/20 transition-colors">
+                                <td class="px-6 py-4">HPP (Cost of Production)</td><td class="px-6 py-4 text-red-400">(Rp 50.479.042)</td><td class="px-6 py-4 text-red-400">(Rp 54.008.868)</td><td class="px-6 py-4 text-red-400">(Rp 57.707.224)</td><td class="px-6 py-4 text-red-400">(Rp 62.519.639)</td><td class="px-6 py-4 text-red-400">(Rp 67.132.355)</td>
+                            </tr>
+                            <tr class="hover:bg-primary/20 transition-colors bg-primary/10">
+                                <td class="px-6 py-4 font-bold text-secondary">Laba Kotor (Gross Profit)</td><td class="px-6 py-4 font-bold">Rp 6.951.983</td><td class="px-6 py-4 font-bold">Rp 7.442.329</td><td class="px-6 py-4 font-bold">Rp 8.229.910</td><td class="px-6 py-4 font-bold">Rp 8.692.466</td><td class="px-6 py-4 font-bold">Rp 9.420.658</td>
+                            </tr>
+                            <tr class="hover:bg-primary/20 transition-colors border-t-2 border-primary">
+                                <td class="px-6 py-4 font-bold text-white">Income Before Tax</td><td class="px-6 py-4 font-bold">Rp 3.723.105</td><td class="px-6 py-4 font-bold">Rp 3.983.773</td><td class="px-6 py-4 font-bold">Rp 4.270.662</td><td class="px-6 py-4 font-bold">Rp 4.610.338</td><td class="px-6 py-4 font-bold">Rp 4.969.932</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-darker/90 text-xs text-gray-400 text-center border-t border-primary/50">
+                    *Catatan: Kesimpulan proyeksi menunjukkan bisnis tumbuh dengan profitabilitas sangat stabil dan terkontrol (Margin rata-rata 7.0% - 7.5% per tahun).
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="kemitraan" class="glass-card p-8 rounded-2xl scroll-mt-24 border border-primary/50 hover:bg-primary/20 transition-colors">
+                    <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center mb-6 border border-secondary"><i class="fas fa-hand-holding-dollar text-secondary text-xl"></i></div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Capital Requirements & Kemitraan</h4>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">Pengembangan ekosistem “Bogor Cassava Center” dirancang sebagai sebuah inisiatif terintegrasi yang membutuhkan dukungan permodalan yang terstruktur serta kolaborasi strategis lintas sektor. Proyek ini tidak hanya berfokus pada produksi, tetapi juga mencakup pengolahan, distribusi, hingga penguatan pasar berbasis komoditas singkong secara menyeluruh.</p>
+                    <div class="text-3xl font-serif font-bold text-secondary mb-2">holding dan pusat sentralisasi</div>
+                    <p class="text-xs text-gray-500 mb-6">Melalui pendekatan ini, kemitraan yang dibangun tidak hanya bersifat operasional, tetapi juga strategis—menciptakan sinergi antara investor, institusi, dan pelaku usaha dalam skala nasional hingga global.</p>
+                    <button onclick="openMitraModal()" class="inline-block px-6 py-3 bg-primary hover:bg-secondary text-white hover:text-dark rounded text-sm font-bold transition-all w-full text-center">JADILAH MITRA INVESTOR</button>
+                </div>
+                <div id="informasi-rups" class="glass-card p-8 rounded-2xl scroll-mt-24 border border-primary/50 hover:bg-primary/20 transition-colors">
+                    <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center mb-6 border border-secondary"><i class="fas fa-users-cog text-secondary text-xl"></i></div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Informasi RUPS</h4>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">Sesuai dengan tata kelola perusahaan yang baik (Good Corporate Governance), PT. International Cassava Center secara rutin mempublikasikan informasi mengenai Rapat Umum Pemegang Saham.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-primary"></i> RUPS Tahunan 2025</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check-circle text-primary"></i> Laporan Akuntabilitas Kuartalan</li>
+                    </ul>
+                    <button class="inline-block px-6 py-3 border border-gray-500 text-gray-300 hover:border-secondary hover:text-secondary rounded text-sm font-bold transition-all w-full text-center cursor-not-allowed">DOKUMEN RUPS (Khusus Mitra)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker border-t border-primary/40 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-primary/20 pb-12">
+                <div class="col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full red-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-serif font-bold text-2xl shadow-[0_0_15px_rgba(135,169,34,0.2)]">BCC</div>
+                        <div><h5 class="font-serif font-bold text-lg text-white">Bogor</h5><h5 class="font-serif font-bold text-lg text-secondary -mt-1">Cassava Center</h5></div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Suatu konsep green business yang dikembangkan untuk membuat area agroindustry dari hulu hingga hilir terhadap produk turunan dan substitusi singkong.</p>
+                </div>
+                <div class="col-span-1">
+                    <h6 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Menu Perusahaan</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-gray-400 hover:text-secondary text-sm transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-secondary text-sm transition-colors">Tentang Kami</a></li>
+                        <li><a href="#project" class="text-gray-400 hover:text-secondary text-sm transition-colors">Proyek & Produk</a></li>
+                        <li><a href="#laporan-tahunan" class="text-gray-400 hover:text-secondary text-sm transition-colors">Laporan Tahunan</a></li>
+                        <li><a href="#laporan-keuangan" class="text-gray-400 hover:text-secondary text-sm transition-colors">Laporan Keuangan</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h6 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Kontak Kantor</h6>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-secondary mt-1"></i><span class="text-gray-400 text-sm leading-relaxed">Jl. Jemb. Hitam No.68, RT.3/RW.10<br>Cijujung, Kec. Sukaraja, Kabupaten Bogor<br>Jawa Barat 16710</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-secondary"></i><span class="text-gray-400 text-sm">+62 251 7503738</span></li>
+                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp text-secondary text-lg"></i><span class="text-gray-400 text-sm">+62 813 1777 9200</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-secondary"></i><span class="text-gray-400 text-sm">internationalcassavacenter@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-xs text-gray-500">&copy; 2026 PT. International Cassava Center. All rights reserved. <br><span class="text-gray-600"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <div onclick="$crisp.push(['do', 'chat:open'])" class="fixed bottom-6 right-6 z-40 cursor-pointer animate-bounce">
+        <img src="Img/Logo/Logo.png" alt="Chat Admin" class="w-14 h-14 rounded-full border-2 border-secondary shadow-[0_0_15px_rgba(135,169,34,0.8)] object-cover bg-white">
+    </div>
+
+    <div id="orderModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] px-4 overflow-y-auto">
+        <div class="bg-darker border border-primary/50 p-6 rounded-lg max-w-lg w-full my-8 text-gray-300 shadow-2xl relative">
+            <span onclick="closeOrderModal()" class="absolute top-4 right-4 text-white text-2xl cursor-pointer hover:text-red-500">&times;</span>
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-primary/30 pb-2">Formulir Pesanan</h3>
+            
+            <div class="space-y-3 text-sm">
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Kode Order (Otomatis)</label>
+                        <input type="text" id="ord-id" readonly class="w-full bg-dark border border-gray-700 rounded p-2 text-white font-mono text-xs">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Tanggal (Otomatis)</label>
+                        <input type="text" id="ord-date" readonly class="w-full bg-dark border border-gray-700 rounded p-2 text-white text-xs">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-gray-500 mb-1">Nama Barang</label>
+                    <input type="text" id="ord-item" readonly class="w-full bg-dark border border-gray-700 rounded p-2 text-secondary font-bold">
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Pilih Kemasan</label>
+                        <select id="ord-kemasan" onchange="calculateTotal()" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary">
+                            <option value="0">-- Pilih Kemasan --</option>
+                            <option value="15000">500gram (Rp 15.000)</option>
+                            <option value="25000">1kg (Rp 25.000)</option>
+                            <option value="625000">25kg (Rp 625.000)</option>
+                            <option value="1620000">50kg (Rp 1.620.000)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Qty (Jumlah)</label>
+                        <input type="number" id="ord-qty" oninput="calculateTotal()" value="1" min="1" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary">
+                    </div>
+                </div>
+
+                <div class="bg-primary/10 border border-primary/30 p-3 rounded space-y-1 mt-2 text-xs">
+                    <div class="flex justify-between text-gray-300"><span>Jumlah Barang:</span> <span id="disp-jumlah">Rp 0</span></div>
+                    <div class="flex justify-between text-gray-300"><span>+ PPN 12%:</span> <span id="disp-ppn">Rp 0</span></div>
+                    <div class="flex justify-between text-gray-300"><span>- Diskon 2%:</span> <span id="disp-diskon">Rp 0</span></div>
+                    <div class="flex justify-between text-gray-300"><span>+ Jasa Ongkir:</span> <span id="disp-ongkir">Rp 10.000</span></div>
+                    <hr class="border-gray-600 my-1">
+                    <div class="flex justify-between text-secondary font-bold text-sm"><span>TOTAL BAYAR:</span> <span id="disp-total">Rp 0</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Metode Pembayaran</label>
+                        <select id="ord-payment" onchange="updateBank()" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary">
+                            <option value="">-- Pilih Bank --</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BRI">BRI</option>
+                            <option value="BNI">BNI</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">No Rekening Otomatis</label>
+                        <div class="flex w-full">
+                            <input type="text" id="ord-rek" readonly class="w-full bg-dark border-y border-l border-primary rounded-l p-2 text-white font-mono text-xs focus:outline-none">
+                            <button onclick="copyRek()" class="bg-primary hover:bg-secondary text-white px-3 rounded-r border-y border-r border-primary transition-colors" title="Salin Rekening"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-gray-500 mb-1">Nama atau Toko</label>
+                    <input type="text" id="ord-name" placeholder="Nama Anda / Toko" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-500 mb-1">No Whatsapp</label>
+                    <input type="text" id="ord-wa" placeholder="08xxxxxxxx" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-500 mb-1">Alamat Lengkap</label>
+                    <textarea id="ord-address" rows="2" class="w-full bg-dark border border-primary rounded p-2 text-white focus:outline-none focus:border-secondary"></textarea>
+                </div>
+
+                <div class="text-xs text-red-400 mt-2 p-2 border border-red-500/30 rounded bg-red-900/10">
+                    <strong>Keterangan:</strong> Segera lakukan pembayaran dan konfirmasi kan pembayaran anda melaui admin kami.
+                </div>
+
+                <button onclick="downloadOrderPDF()" class="w-full mt-4 bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded transition-colors shadow-lg">
+                    <i class="fas fa-file-pdf"></i> BAYAR SEKARANG (Download PDF)
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mitraModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] px-4 overflow-y-auto">
+        <div class="bg-darker border border-primary/50 p-6 rounded-lg max-w-lg w-full my-8 text-gray-300 shadow-2xl relative">
+            <span onclick="closeMitraModal()" class="absolute top-4 right-4 text-white text-2xl cursor-pointer hover:text-red-500">&times;</span>
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-primary/30 pb-2">Formulir Kemitraan</h3>
+            <div class="space-y-4 text-sm">
+                <div><label class="block text-xs text-gray-500 mb-1">Nama Pribadi / Perwakilan</label><input type="text" id="mtr-name" class="w-full bg-dark border border-primary rounded p-2 text-white"></div>
+                <div><label class="block text-xs text-gray-500 mb-1">Data Perusahaan (Jika ada)</label><input type="text" id="mtr-company" class="w-full bg-dark border border-primary rounded p-2 text-white"></div>
+                <div><label class="block text-xs text-gray-500 mb-1">Kontak / No. Whatsapp</label><input type="text" id="mtr-contact" class="w-full bg-dark border border-primary rounded p-2 text-white"></div>
+                <div>
+                    <label class="block text-xs text-gray-500 mb-1">Pilihan Mitra</label>
+                    <select id="mtr-type" class="w-full bg-dark border border-primary rounded p-2 text-white">
+                        <option value="Pemodal / Investor">Sebagai Pemodal / Investor</option>
+                        <option value="Distributor">Sebagai Distributor Wilayah</option>
+                        <option value="Supplier Bahan Baku">Sebagai Supplier Bahan Baku</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div><label class="block text-xs text-gray-500 mb-1">Pesan / Harapan Kerjasama</label><textarea id="mtr-msg" rows="3" class="w-full bg-dark border border-primary rounded p-2 text-white"></textarea></div>
+                <button onclick="downloadMitraPDF()" class="w-full mt-4 bg-secondary hover:bg-[#9cbd28] text-dark font-bold py-3 rounded transition-colors shadow-lg">
+                    <i class="fas fa-download"></i> DOWNLOAD FORMULIR PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 50 });
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) { nav.classList.add('shadow-lg'); nav.classList.replace('bg-darker/90', 'bg-darker'); } 
+            else { nav.classList.remove('shadow-lg'); nav.classList.replace('bg-darker', 'bg-darker/90'); }
+        });
+
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Provinsi', 'Market Share'], ['Jawa Barat', 39], ['Jawa Timur', 21], ['Sumatera Selatan', 18], ['Bangka Belitung', 14], ['DKI Jakarta', 5], ['Lain-lain', 3]
+            ]);
+            var options = { title: 'Distribusi Penjualan Market Share 2024', titleTextStyle: { color: '#FCDC2A', fontSize: 16, fontName: 'Inter', bold: true }, is3D: true, backgroundColor: 'transparent', legend: { textStyle: { color: '#e5e7eb', fontName: 'Inter', fontSize: 13 }, position: 'right' }, chartArea: { width: '90%', height: '80%' }, colors: ['#114232', '#87A922', '#FCDC2A', '#4ade80', '#166534', '#a3e635'], pieSliceTextStyle: { color: '#ffffff', fontSize: 14 } };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+        window.addEventListener('resize', drawChart);
+		
+        const slides = document.querySelectorAll('.bg-slide');
+        let current = 0;
+        function changeSlide() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+        setInterval(changeSlide, 2000);
+
+        function openModal(src) {
+            document.getElementById("imageModal").classList.remove("hidden");
+            document.getElementById("imageModal").classList.add("flex");
+            document.getElementById("modalImg").src = src;
+        }
+        function closeModal() {
+            document.getElementById("imageModal").classList.add("hidden");
+            document.getElementById("imageModal").classList.remove("flex");
+        }
+
+        function updateWaktu() {
+            const now = new Date();
+            const hari = now.getDate();
+            const bulanList = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+            const bulan = bulanList[now.getMonth()];
+            const tahun = now.getFullYear();
+            let jam = now.getHours().toString().padStart(2, '0');
+            let menit = now.getMinutes().toString().padStart(2, '0');
+            let detik = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById("waktu").innerText = `${jam}:${menit}:${detik} - ${hari} ${bulan} ${tahun}`;
+        }
+        setInterval(updateWaktu, 1000);
+        updateWaktu();
+
+        // ================= SCRIPT JS FITUR ORDER UPDATE ================= //
+        
+        // Simpan nilai mentah total untuk di PDF
+        let rawTotalBayar = 0;
+        let rawJumlahBarang = 0;
+        let rawPPN = 0;
+        let rawDiskon = 0;
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+        }
+
+        function calculateTotal() {
+            let harga = parseFloat(document.getElementById("ord-kemasan").value) || 0;
+            let qty = parseInt(document.getElementById("ord-qty").value) || 1;
+            
+            rawJumlahBarang = harga * qty;
+            rawPPN = rawJumlahBarang * 0.12; // PPN 12%
+            rawDiskon = rawJumlahBarang * 0.02; // Diskon 2%
+            let ongkir = 10000; // Fixed Ongkir
+            
+            if (rawJumlahBarang === 0) ongkir = 0; // Jika belum pilih kemasan, ongkir 0
+            
+            rawTotalBayar = rawJumlahBarang + rawPPN - rawDiskon + ongkir;
+
+            // Update UI
+            document.getElementById("disp-jumlah").innerText = formatRupiah(rawJumlahBarang);
+            document.getElementById("disp-ppn").innerText = formatRupiah(rawPPN);
+            document.getElementById("disp-diskon").innerText = "- " + formatRupiah(rawDiskon);
+            document.getElementById("disp-ongkir").innerText = formatRupiah(ongkir);
+            document.getElementById("disp-total").innerText = formatRupiah(rawTotalBayar);
+        }
+
+        const bankData = {
+            "BCA": "1234567890",
+            "BRI": "0987654321",
+            "BNI": "1122334455"
+        };
+
+        function updateBank() {
+            let bank = document.getElementById("ord-payment").value;
+            let rekField = document.getElementById("ord-rek");
+            if(bank && bankData[bank]) {
+                rekField.value = bankData[bank];
+            } else {
+                rekField.value = "";
+            }
+        }
+
+        function copyRek() {
+            let rek = document.getElementById("ord-rek").value;
+            if(!rek) return alert("Pilih bank terlebih dahulu!");
+            navigator.clipboard.writeText(rek).then(() => {
+                alert("Nomor Rekening " + rek + " berhasil disalin!");
+            });
+        }
+
+        function generateOrderID() { return Math.random().toString(36).substr(2, 7).toUpperCase(); }
+
+        function openOrderModal(productName) {
+            document.getElementById("orderModal").classList.remove("hidden");
+            document.getElementById("orderModal").classList.add("flex");
+            document.getElementById("ord-id").value = generateOrderID();
+            document.getElementById("ord-date").value = new Date().toLocaleDateString('id-ID');
+            document.getElementById("ord-item").value = productName;
+            
+            // Reset form
+            document.getElementById("ord-kemasan").value = "0";
+            document.getElementById("ord-qty").value = "1";
+            document.getElementById("ord-payment").value = "";
+            updateBank();
+            calculateTotal();
+        }
+
+        function closeOrderModal() {
+            document.getElementById("orderModal").classList.add("hidden");
+            document.getElementById("orderModal").classList.remove("flex");
+        }
+
+        function downloadOrderPDF() {
+            let kemasanEl = document.getElementById("ord-kemasan");
+            if (kemasanEl.value === "0") return alert("Silakan pilih Harga Kemasan terlebih dahulu!");
+            if (!document.getElementById("ord-payment").value) return alert("Silakan pilih Metode Pembayaran!");
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation: 'landscape', format: 'a5' });
+
+            // Data Input
+            const id = document.getElementById("ord-id").value;
+            const date = document.getElementById("ord-date").value;
+            const item = document.getElementById("ord-item").value;
+            const qty = document.getElementById("ord-qty").value;
+            const namaKemasan = kemasanEl.options[kemasanEl.selectedIndex].text;
+            
+            const payment = document.getElementById("ord-payment").value;
+            const rek = document.getElementById("ord-rek").value;
+            const name = document.getElementById("ord-name").value;
+            const wa = document.getElementById("ord-wa").value;
+            const address = document.getElementById("ord-address").value;
+
+            // Desain PDF
+            doc.setFontSize(14);
+            doc.setFont("helvetica", "bold");
+            doc.text("INVOICE PEMESANAN - PT. INTERNATIONAL CASSAVA CENTER", 10, 20);
+            
+            doc.setFontSize(10);
+            doc.setFont("helvetica", "normal");
+            doc.text(`Kode Order    : ${id}`, 10, 30);
+            doc.text(`Tanggal       : ${date}`, 10, 36);
+            
+            doc.line(10, 40, 200, 40); // Garis
+            
+            doc.text(`Nama Pemesan  : ${name}`, 10, 48);
+            doc.text(`No. WhatsApp  : ${wa}`, 10, 54);
+            doc.text(`Alamat        : ${address}`, 10, 60);
+            
+            doc.line(10, 65, 200, 65); // Garis
+            
+            doc.setFont("helvetica", "bold");
+            doc.text(`Barang Pesanan : ${item}`, 10, 75);
+            doc.setFont("helvetica", "normal");
+            doc.text(`Kemasan       : ${namaKemasan}`, 10, 81);
+            doc.text(`Kuantitas (Qty): ${qty}`, 10, 87);
+            
+            doc.text(`Metode Bayar  : ${payment} (${rek})`, 10, 95);
+            
+            // Kolom Rincian Biaya di Kanan
+            doc.text(`Jumlah Barang : ${formatRupiah(rawJumlahBarang)}`, 130, 75);
+            doc.text(`PPN 12%       : ${formatRupiah(rawPPN)}`, 130, 81);
+            doc.text(`Diskon 2%     : -${formatRupiah(rawDiskon)}`, 130, 87);
+            doc.text(`Jasa Ongkir   : Rp 10.000`, 130, 93);
+            
+            doc.line(130, 98, 190, 98);
+            doc.setFont("helvetica", "bold");
+            doc.text(`TOTAL BAYAR : ${formatRupiah(rawTotalBayar)}`, 130, 105);
+            
+            doc.setFontSize(9);
+            doc.setTextColor(200, 0, 0);
+            doc.text("*Segera lakukan pembayaran dan konfirmasikan ke admin kami melalui WhatsApp/Aplikasi Crisp.", 10, 125);
+
+            doc.save(`Order_${id}.pdf`);
+            alert("Invoice PDF berhasil diunduh. Silakan kirimkan ke admin kami untuk konfirmasi!");
+            closeOrderModal();
+        }
+
+        // --- SCRIPT KEMITRAAN ---
+        function openMitraModal() { document.getElementById("mitraModal").classList.remove("hidden"); document.getElementById("mitraModal").classList.add("flex"); }
+        function closeMitraModal() { document.getElementById("mitraModal").classList.add("hidden"); document.getElementById("mitraModal").classList.remove("flex"); }
+        function downloadMitraPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation: 'portrait', format: 'a4' });
+            const name = document.getElementById("mtr-name").value;
+            const company = document.getElementById("mtr-company").value;
+            const contact = document.getElementById("mtr-contact").value;
+            const type = document.getElementById("mtr-type").value;
+            const msg = document.getElementById("mtr-msg").value;
+            const date = new Date().toLocaleDateString('id-ID');
+
+            doc.setFontSize(18); doc.setFont("helvetica", "bold");
+            doc.text("FORMULIR PENGAJUAN KEMITRAAN", 105, 20, null, null, "center");
+            doc.setFontSize(14); doc.text("PT. International Cassava Center", 105, 28, null, null, "center");
+            doc.line(20, 35, 190, 35);
+            doc.setFontSize(12); doc.setFont("helvetica", "normal");
+            doc.text(`Tanggal Pengajuan : ${date}`, 20, 45);
+            doc.text(`Nama Perwakilan   : ${name}`, 20, 55);
+            doc.text(`Data Perusahaan   : ${company}`, 20, 65);
+            doc.text(`Kontak / WA       : ${contact}`, 20, 75);
+            doc.text(`Pilihan Mitra     : ${type}`, 20, 85);
+            doc.text("Pesan / Harapan Kerjasama:", 20, 100);
+            doc.setFont("helvetica", "italic");
+            const splitMsg = doc.splitTextToSize(msg, 170); doc.text(splitMsg, 20, 110);
+            doc.save(`Kemitraan_${name.replace(/\s+/g, '_')}.pdf`);
+            alert("Formulir Kemitraan berhasil diunduh. Silakan kirimkan dokumen ini ke email atau WhatsApp kami.");
+            closeMitraModal();
+        }
+    </script>
+</body>
+</html>
